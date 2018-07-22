@@ -6,7 +6,7 @@ client.on('ready', () => {
     console.log('[System] Авторизация успешна. Скрипт загружен без ошибок.')
     client.user.setPresence({
         game: {
-            name: `${process.env.BOTPREFIX}h`,
+            name: `${process.env.BOTPREFIX}help`,
             type: 3
         }
     });
@@ -37,7 +37,11 @@ client.on("message", async message => {
     let playerCount = players.online || 0
     let playerMaxCount = players.max
     }
-    message.channel.send(`Сейчас ${players.online} из ${players.max} игроков на сервере.\nIP-адрес: [play.grmc.su:25565](play.grmc.su:25565)\nПокупка доната: [grmc.su](grmc.su)\nПравила: [grmc.su/?page=rules](grmc.su/?page=rules)`);
+		const embed = new Discord.RichEmbed()
+                .setTitle(`Помощь по командам:`)
+                .setFooter("GRIEFMC")
+                .setDescription(`Сейчас ${players.online} из ${players.max} игроков на сервере.\nIP-адрес: [play.grmc.su:25565](play.grmc.su:25565)\nПокупка доната: [grmc.su](grmc.su)\nПравила: [grmc.su/?page=rules](grmc.su/?page=rules)`);
+    message.channel.send({embed});
 });
     }
 	if(command === "help") {
