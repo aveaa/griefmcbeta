@@ -52,18 +52,12 @@ axios.get(jsonread).then(version => {
         let srv_version = version.version
 }
 });
-const embed1 = new Discord.RichEmbed()
+const embed = new Discord.RichEmbed()
                 .setTitle(`Информация:`)
                 .setFooter("GRIEFMC")
                 .setDescription(`Статус: Online\n\nКол-во игроков на сервере: ${playerCount} из ${playerMaxCount}\nВерсия: ${srv_version}`);
-const embed2 = new Discord.RichEmbed()
-                .setTitle(`Информация:`)
-                .setFooter("GRIEFMC")
-                .setDescription(`Статус: Offline\n\nКол-во игроков на сервере: Недоступно\nВерсия: Недоступно`);
 
-                message.channel.send({embed: embed1});
-    } else {
-                message.channel.send({embed: embed2});
+                message.channel.send({embed});
     }
 	if(command === "help") {
 		const embed = new Discord.RichEmbed()
