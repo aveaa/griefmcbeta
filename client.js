@@ -1,5 +1,5 @@
-const Discord = require('discord.js');
 const axios = require('axios');
+const Discord = require('discord.js');
 const client = new Discord.Client();
 
 var jsonread = 'http://griefmcbot.thedipper.cf/json.php?host=play.grmc.su&port=25565';
