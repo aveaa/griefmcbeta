@@ -2,8 +2,6 @@ const axios = require('axios');
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-var jsonread = 'http://griefmcbot.thedipper.cf/json.php?host=play.grmc.su&port=25565';
-
 client.on('ready', () => {
     console.log('[System] Авторизация успешна. Скрипт загружен без ошибок.')
     client.user.setPresence({
@@ -15,6 +13,7 @@ client.on('ready', () => {
 });
 
 client.on("message", async message => {
+	var jsonread = 'http://griefmcbot.thedipper.cf/json1.php?host=play.grmc.su&port=25565';
   if(message.author.bot) return;
 	
   if(message.content.indexOf(process.env.BOTPREFIX) !== 0) return;
@@ -33,31 +32,13 @@ client.on("message", async message => {
 }
 	
     if(command === "info") {
-	axios.get(jsonread).then(players => {
+	axios.get(`${jsonread}`).then(players => {
 		if(players) {
-			let playerCount = players.online || 0
-			let playerMaxCount = players.max
+    let playerCount = players.online || 0
+    let playerMaxCount = players.max
     }
+    message.channel.send(`Сейчас ${players.online} из ${players.max} игроков на сервере.\nIP-адрес: [play.grmc.su:25565](play.grmc.su:25565)\nПокупка доната: [grmc.su](grmc.su)\nПравила: [grmc.su/?page=rules](grmc.su/?page=rules)`);
 });
-
-	axios.get(jsonread).then(host => {
-    if(host) {
-        let address = host.host
-        let port = host.port
-}
-});
-
-axios.get(jsonread).then(version => {
-    if(version) {
-        let srv_version = version.version
-}
-});
-const embed = new Discord.RichEmbed()
-                .setTitle(`Информация:`)
-                .setFooter("GRIEFMC")
-                .setDescription(`Статус: Online\n\nКол-во игроков на сервере: ${playerCount} из ${playerMaxCount}\nВерсия: ${srv_version}`);
-
-                message.channel.send({embed});
     }
 	if(command === "help") {
 		const embed = new Discord.RichEmbed()
