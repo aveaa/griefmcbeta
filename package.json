@@ -1,7 +1,7 @@
 {
-  "name": "GRIEFMC StatsBot",
-  "description": "An Discord Bot.",
-  "version": "1.1.0",
+  "name": "GRIEFMCBot",
+  "description": "Bot for Discord",
+  "version": "0.2.0",
   "main": "client.js",
   "scripts": {
     "start": "node client.js"
