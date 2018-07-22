@@ -1,0 +1,13 @@
+{
+  "name": "GRIEFMC StatsBot",
+  "description": "An Discord Bot.",
+  "version": "1.1.0",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node client.js"
+  },
+	"dependencies": {
+    "discord.js": "^11.3.0",
+		"axios": "^0.17.1"
+	}
+}
