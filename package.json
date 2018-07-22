@@ -7,7 +7,8 @@
     "start": "node client.js"
   },
 	"dependencies": {
-  "discord.js": "^11.2.0",
-  "axios": "^0.17.1"
+		"axios": "^0.17.1",
+		"discord.js": "^11.3.0",
+		"dotenv": "^5.0.0"
 	}
 }
