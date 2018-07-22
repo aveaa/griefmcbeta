@@ -2,12 +2,12 @@
   "name": "GRIEFMC StatsBot",
   "description": "An Discord Bot.",
   "version": "1.1.0",
-  "main": "bot.js",
+  "main": "client.js",
   "scripts": {
     "start": "node client.js"
   },
 	"dependencies": {
-    "discord.js": "^11.3.0",
-		"axios": "^0.17.1"
+  "discord.js": "^11.2.0",
+  "axios": "^0.17.1"
 	}
 }
